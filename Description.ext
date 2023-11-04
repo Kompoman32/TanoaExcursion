@@ -1,0 +1,131 @@
+// onLoadMission = "****";
+// onLoadIntro = "SSS";
+
+briefing = 0;
+skipLobby = 0;
+
+onLoadIntroTime = 0;
+
+OnLoadName = "Welcom to Tanoa! Sunny heaven";
+author="Mother Lover & Gabefrut";
+
+class Header
+{
+    gameType = COOP; //game type
+    minPlayers = 1; //min # of players the mission supports
+    maxPlayers = 32; //max # of players the mission supports
+};
+
+// disabledAI = 0;
+// disableChannels[]={1,2,3,4,5};
+
+// respawn = "BASE";
+// respawnTemplates[] = { "MenuPosition" };
+// respawnTemplates[] = { "Counter" };
+
+class CfgWorlds
+{
+    class Tanoa
+    {
+        author = "Bohemia Interactive"; // Author
+        description = "Tanoa"; // World name
+        // pictureMap = "A3\map_Tanoa\data\pictureMap_ca.paa"; // Background map
+        // pictureShot = "A3\map_Tanoa\data\ui_Tanoa_ca.paa"; // Default overview picture
+
+        // Loading texts displayed on the bottom of the loading screen (picked randomly)
+        loadingTexts[] =
+        {
+            "Abrikos pidor."
+        };
+    };
+};
+
+class CfgSounds
+{
+    class welcome
+    {
+        name = "welcome";
+        sound[] = {"\sound\welcome.ogg", 1, 1.0};
+        titles[] = {};
+    };
+    class teenspirit
+    {
+        name = "teenspirit";
+        sound[] = {"\sound\teenspirit.ogg", 1, 1.0};
+        titles[] = {};
+    };
+    class candrop
+    {
+        name = "candrop";
+        sound[] = {"\sound\candrop.ogg", 2, 1.0};
+        titles[] = {};
+    };
+};
+
+class CfgFunctions
+{
+    class RT_MissionFlow 
+    {
+        class MissionFlow 
+        {
+            class start {};
+        }
+    };
+    class RT_Bus 
+    {
+        class Bus 
+        {
+            class teleportToBus {};
+            class moveToCargo {};
+            class setStayInBus {};
+        }
+    };
+	class RT_Camera
+	{
+        class Camera
+		{
+			class init {};
+			class show {};
+			class hide {};
+		};
+    };
+	class RT_Airport
+	{
+        class Airport
+		{
+			class startPlaneCam {};
+			class planeCamTracker {};
+			class allInBus {};
+			class planeParked {};
+			class busStopped {};
+			class busRun {};
+			class teenSpirit {};
+			class addZeusActions {};
+		};
+	};
+	class RT_Players
+    {
+        class Players 
+        {
+			class addInventoryHandler {};
+			class initUnit {};
+        }
+    };
+	class RT_Utils 
+    {
+        class Utils 
+        {
+            class initVariables {};
+			class setVD {};
+			class smoothSetValue {};
+			class log {};
+			class fadeIn {};
+			class fadeOut {};
+			class fadeInOut {};
+			class holsterWeapon {};
+			class addInventoryToObject {};
+			class setCanOpenInventory {};
+			class disableRandomization {};
+        };
+    };
+};
